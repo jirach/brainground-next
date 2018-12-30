@@ -1,3 +1,3 @@
 # Brainground
 
-new
+all new
