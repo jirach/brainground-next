@@ -1,0 +1,22 @@
+{
+  "name": "brainground-next",
+  "version": "1.0.0",
+  "description": "Brainground - an interactive space to grow ideas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jirach Suthammanas <jirach@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jirach/brainground-next.git"
+  },
+  "keywords": [
+    "brainground"
+  ],
+  "bugs": {
+    "url": "https://github.com/jirach/brainground-next/issues"
+  },
+  "homepage": "https://github.com/jirach/brainground-next#readme"
+}
