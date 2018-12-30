@@ -4,7 +4,9 @@
   "description": "Brainground - an interactive space to grow ideas",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "node server.js",
+    "build": "next build",
+    "start": "NODE_ENV=production node server.js"
   },
   "author": "Jirach Suthammanas <jirach@gmail.com>",
   "license": "MIT",
@@ -18,5 +20,14 @@
   "bugs": {
     "url": "https://github.com/jirach/brainground-next/issues"
   },
-  "homepage": "https://github.com/jirach/brainground-next#readme"
+  "homepage": "https://github.com/jirach/brainground-next#readme",
+  "dependencies": {
+    "@material-ui/core": "^3.7.1",
+    "express": "^4.16.4",
+    "jss": "^9.8.7",
+    "next": "^7.0.2",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-jss": "^8.1.0"
+  }
 }
