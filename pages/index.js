@@ -1,77 +1,68 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Button from '@material-ui/core/Button';
-import Dialog from '@material-ui/core/Dialog';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
-import DialogActions from '@material-ui/core/DialogActions';
-import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
-import Link from 'next/link';
+import Typography from '@material-ui/core/Typography';
+import Navbar from '../components/Navbar';
 
 const styles = theme => ({
   root: {
-    textAlign: 'center',
-    paddingTop: theme.spacing.unit * 20
+    display: 'flex'
+  },
+  toolbar: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    padding: '0 8px',
+    ...theme.mixins.toolbar
+  },
+  content: {
+    flexGrow: 1,
+    padding: theme.spacing.unit * 3
   }
 });
 
-class Index extends React.Component {
-  state = {
-    open: false
-  };
-
-  handleClose = () => {
-    this.setState({
-      open: false
-    });
-  };
-
-  handleClick = () => {
-    this.setState({
-      open: true
-    });
-  };
-
+class MiniDrawer extends React.Component {
   render() {
     const { classes } = this.props;
-    const { open } = this.state;
 
     return (
       <div className={classes.root}>
-        <Dialog open={open} onClose={this.handleClose}>
-          <DialogTitle>Super Secret Password</DialogTitle>
-          <DialogContent>
-            <DialogContentText>1-2-3-4-5</DialogContentText>
-          </DialogContent>
-          <DialogActions>
-            <Button color="primary" onClick={this.handleClose}>
-              OK
-            </Button>
-          </DialogActions>
-        </Dialog>
-        <Typography variant="h4" gutterBottom>
-          Material-UI
-        </Typography>
-        <Typography variant="subtitle1" gutterBottom>
-          example project
-        </Typography>
-        <Typography gutterBottom>
-          <Link href="/about">
-            <a>Go to the about page</a>
-          </Link>
-        </Typography>
-        <Button variant="contained" color="secondary" onClick={this.handleClick}>
-          Super Secret Password
-        </Button>
+        <Navbar />
+        <main className={classes.content}>
+          <div className={classes.toolbar} />
+          <Typography paragraph>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent
+            elementum facilisis leo vel. Risus at ultrices mi tempus imperdiet. Semper risus in
+            hendrerit gravida rutrum quisque non tellus. Convallis convallis tellus id interdum
+            velit laoreet id donec ultrices. Odio morbi quis commodo odio aenean sed adipiscing.
+            Amet nisl suscipit adipiscing bibendum est ultricies integer quis. Cursus euismod quis
+            viverra nibh cras. Metus vulputate eu scelerisque felis imperdiet proin fermentum leo.
+            Mauris commodo quis imperdiet massa tincidunt. Cras tincidunt lobortis feugiat vivamus
+            at augue. At augue eget arcu dictum varius duis at consectetur lorem. Velit sed
+            ullamcorper morbi tincidunt. Lorem donec massa sapien faucibus et molestie ac.
+          </Typography>
+          <Typography paragraph>
+            Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper eget nulla
+            facilisi etiam dignissim diam. Pulvinar elementum integer enim neque volutpat ac
+            tincidunt. Ornare suspendisse sed nisi lacus sed viverra tellus. Purus sit amet volutpat
+            consequat mauris. Elementum eu facilisis sed odio morbi. Euismod lacinia at quis risus
+            sed vulputate odio. Morbi tincidunt ornare massa eget egestas purus viverra accumsan in.
+            In hendrerit gravida rutrum quisque non tellus orci ac. Pellentesque nec nam aliquam sem
+            et tortor. Habitant morbi tristique senectus et. Adipiscing elit duis tristique
+            sollicitudin nibh sit. Ornare aenean euismod elementum nisi quis eleifend. Commodo
+            viverra maecenas accumsan lacus vel facilisis. Nulla posuere sollicitudin aliquam
+            ultrices sagittis orci a.
+          </Typography>
+        </main>
       </div>
     );
   }
 }
 
-Index.propTypes = {
-  classes: PropTypes.object.isRequired
+MiniDrawer.propTypes = {
+  classes: PropTypes.object.isRequired,
+  theme: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(Index);
+export default withStyles(styles, { withTheme: true })(MiniDrawer);
